@@ -23,7 +23,7 @@
         }
         #signupBtn{
             display:none;
-        }          
+        }           
     </style>
     
 </head>
@@ -40,8 +40,9 @@
                     -->
                    <div class="card-body text-left">
                     <form id="regForm" action="signup.php" method="POST">
-                        <?php include('registration/server.php') ?>
-                        <?php include('registration/error.php') ?>
+                   
+                        <?php include('registration/register.php') ?>
+                        
                             <div class="tab">
                                 <h4><span>Step 1 / 3</span><h4>
                                 <h6 class="mb-4 text-muted">Personal Information</h6>
@@ -269,7 +270,7 @@
                         </div>
                     </form>
                     <br>
-                    <p class="mb-0 text-muted text-right">Already have an account? <a href="login.php">Log in</a></p>
+                    <p class="mb-0 text-muted text-right">Already have an account? <a href="index.php">Log in</a></p>
                 </div>
             </div>
         </div>
@@ -279,9 +280,6 @@
     <script src="assets/vendor/bootstrap4/js/bootstrap.min.js"></script>
     <script src="assets/js/form-validator.js"></script>
     <script src="js/registration.js"></script>
-
- 
-    
     <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 * Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
 -->
 
+
 <?php include 'includes/header.php'; ?>
 
 <body>
@@ -35,7 +36,7 @@
                                         <div class="col-sm-8">
                                             <div class="detail text-center">
                                                 <p>Number of Users</p>
-                                                <span id ="getNum"class="number"><?php echo $row['count'] ?></span>
+                                                <span id ="getNum"class="number"><?php echo $row['count']; ?></span>
                                             </div>
                                         </div>
                                     </div>

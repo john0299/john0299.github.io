@@ -28,8 +28,8 @@
                     <h6 class="mb-4 text-muted">Sign in to your account</h6>
                    
                     <form action="" method="POST">
-                        <?php include('registration/server.php') ?>
-                        <?php include('registration/error.php') ?>
+                        <?php include 'registration/user_login.php'; ?>
+                        <?php include 'includes/error.php'; ?>
                         <div class="form-group">
                             <input type="text" class="form-control" name ="username" placeholder="Username" required>
                         </div>

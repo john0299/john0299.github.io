@@ -8,6 +8,7 @@
 -->
 <html lang="en">
 
+
 <?php include 'includes/header.php'; ?>
 <head>
 
@@ -22,59 +23,56 @@
             
             <?php include 'includes/navbar.php'; ?>
             <?php
-                $id=$_SESSION['username'];
-                $query=mysqli_query($db,"SELECT * FROM users where username='$id'") or die(mysqli_error());
-                $row=mysqli_fetch_array($query);
+                $user=$_SESSION['username'];
+                // $query=mysqli_query($db,"SELECT * FROM users where username='$id'") or die(mysqli_error());
+                // $row=mysqli_fetch_array($query);
+                $query = "SELECT * FROM users WHERE username='$user'";
+                $stmt = $conn->prepare($query);
+                $stmt->execute(array($query));
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
             ?>
+         
             
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-8 mt-6">
+                        <div class="col-sm-12 col-md-12 col-lg-4 mt-6">
                             <div class="card">
                                 <div class="card-header text-center">
                                     Personal Information
                                 </div>
                                 <div class="content">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 col-lg-12">
                                             <div class="icon-big text-center">
                                                  <i class="teal fas fa-user"></i>                                              
                                             </div>
                                             <!-- <img src="img/haya.jpg" width="100%"> -->
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 col-lg-12">
                                             <div class="detail text-left">
-                                                <p>Name: <strong><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname'].' '.$row['suffix'] ?></strong></p>
+                                                <p>Full Name: <strong><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname'].' '.$row['suffix'] ?></strong></p>
                                                 <p>Email: <strong><?php echo $row['email'] ?></strong></p>
                                                 <p>Contact Number: <strong><?php echo $row['contact'] ?></strong></p>
                                                 <p>Nickname: <strong><?php echo $row['nickname'] ?></strong></p>
                                                 <p>Gender: <strong><?php echo $row['gender'] ?></strong></p>
                                                 
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="detail text-left">
                                                 <p>Birthdate: <strong><?php echo $row['birthdate'] ?></strong></p>
                                                 <p>Birthplace: <strong><?php echo $row['birthplace'] ?></strong></p>
                                                 <p>Username: <strong><?php echo $row['username'] ?></strong></p>
                                                 <p>Password: <strong><?php echo $row['password'] ?></strong></p>
-                                               
                                             </div>
                                         </div>
+                                       
                                     </div>
                                     
                             
                                 </div>
                             </div>
                             
-                        </div>                   
-                    </div>                                       
-                </div>
+                        </div>
 
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 mt-6">
+                          <div class="col-sm-12 col-md-12 col-lg-8 mt-6">
                             <div class="card">
                                 <div class="card-header text-center">
                                     Additional Information
@@ -82,7 +80,7 @@
                                 <div class="content">
                                     <div class="row">
 
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 col-lg-6">
                                             <div class="detail text-left">
                                                 <p>Civil Status:<strong> <?php echo $row['civilstatus'] ?></strong></p>
                                                 <p>Education:<strong> <?php echo $row['education'] ?></strong></p>
@@ -92,7 +90,7 @@
                                                 
                                             </div>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 col-lg-6">
                                             <div class="detail text-left">
                                             
                                                 <p>Company: <strong><?php echo $row['company'] ?></strong></p>
@@ -103,7 +101,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 col-lg-6">
                                             <div class="detail text-left">
                                             
                                                 <p>Informal Settler: <strong><?php echo $row['q1'] ?></strong></p>
@@ -115,7 +113,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 col-lg-6">
                                             <div class="detail text-left">
                                             
                                                 <p>House Number: <strong><?php echo $row['house_number'] ?></strong></p>
@@ -132,9 +130,11 @@
                                 </div>
                             </div>
                             
-                        </div>                   
+                        </div>                       
                     </div>                                       
                 </div>
+
+               
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<?php include 'registration/server.php' ?>
+<?php include 'registration/user_login.php' ?>
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
     <button type="button" id="sidebarCollapse" class="btn btn-outline-secondary default-secondary-menu"><i class="fas fa-bars"></i><span></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -10,7 +10,7 @@
                     <div class="dropdown-menu dropdown-menu-right nav-link-menu">
                         <ul class="nav-list">
                             <li><a href="profile.php" name="profile" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
-                            <li><a href="login.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            <li><a href="logout.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
